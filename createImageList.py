@@ -8,6 +8,8 @@ if len(sys.argv) < 3:
 	sys.exit(1)
 
 def browsedir(dir):
+	if '*' in dir:
+		return Set()
 	print('Explor :', dir)
 	imList = Set()
 	for file in glob.glob(path.join(dir, '*')):
