@@ -16,12 +16,14 @@ def browsedir(dir):
 		if path.isdir(file):
 			imList |= browsedir(file)
 		elif '.jpg' in file or '.JPG' in file or '.JPEG' in file:
+			#print("Image :",file)
 			imList.add(file)	
 	return imList
 
 l = browsedir(sys.argv[1])
 with open(sys.argv[2], 'w') as f:
 	for im in l:
+		#print(im)
 		f.write(im)
 		f.write('\n')
 
